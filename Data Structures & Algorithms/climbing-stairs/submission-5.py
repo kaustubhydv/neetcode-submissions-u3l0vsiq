@@ -1,0 +1,10 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n <= 1:
+            return n
+        arr = [1,2]
+        i = 3
+        while i <= n:
+            arr[0], arr[1] = arr[1], arr[0] + arr[1]
+            i += 1
+        return arr[1]
