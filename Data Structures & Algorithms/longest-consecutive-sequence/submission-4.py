@@ -1,0 +1,17 @@
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        lookup = set(nums)
+        maxL = 0
+        for val in lookup:
+            curr = val
+            res = 1
+            if val - 1 not in lookup:
+                while curr + 1 in lookup:
+                    res += 1
+                    curr += 1
+            maxL = max(res, maxL)
+        return maxL
+
+        
+        
+        
